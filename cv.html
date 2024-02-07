@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta http-equiv="refresh" content="5">
+
+    <title>CV</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --main-color: rgb(90, 250, 90);
+        --gray-bar: #eaeaea;
+      }
+      @page {
+        size: 21cm 29.7cm;
+      }
+      @media print {
+        html, body{
+            margin:0
+        }
+      }
+      html, body {
+        border: 1px solid black;
+        font-size: 0.95em;
+        height: 297mm;
+        width: 210mm;
+        word-wrap: break-word;
+        -print-color-adjust: exact;
+        -moz-print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+      li, p {
+        border: 0px solid black;
+        line-height: 1.55em !important;
+      }
+      .material-icons {
+        font-family: "Material Icons";
+        font-weight: normal;
+        font-style: normal;
+        font-size: 24px;  
+        display: inline-block;
+        text-transform: none;
+        letter-spacing: normal;
+        word-wrap: normal;
+        white-space: nowrap;
+        direction: ltr;
+        vertical-align: -0.1em;
+
+        /* Support for all WebKit browsers. */
+        -webkit-font-smoothing: antialiased;
+        /* Support for Safari and Chrome. */
+        text-rendering: optimizeLegibility;
+        /* Support for Firefox. */
+        -moz-osx-font-smoothing: grayscale;
+        /* Support for IE. */
+        font-feature-settings: "liga";
+      }
+      #cv {
+        grid-template-rows: min-content;
+      }
+      a {
+        color: rgb(90, 230, 90) /* var(--main-color) */ !important;
+      }
+      hr {
+        border-radius: 999px;
+        background: var(--main-color);
+        height: 0.4em !important;
+        width: 100%;
+      }
+      hr.lvl6 {
+        background: linear-gradient(to right, var(--main-color) 95%, var(--gray-bar) 96%);
+      }
+      hr.lvl5 {
+        background: linear-gradient(to right, var(--main-color) 71%, var(--gray-bar) 72%);
+      }
+      hr.lvl4 {
+        background: linear-gradient(to right, var(--main-color) 56%, var(--gray-bar) 57%);
+      }
+      hr.lvl3 {
+        background: linear-gradient(to right, var(--main-color) 34%, var(--gray-bar) 35%);
+      }
+      hr.lvl2 {
+        background: linear-gradient(to right, var(--main-color) 18%, var(--gray-bar) 19%);
+      }
+      hr.lvl1 {
+        background: linear-gradient(to right, var(--main-color) 9%, var(--gray-bar) 10%);
+      }
+      hr.lvl0 {
+        background: linear-gradient(to right, var(--main-color) 1%, var(--gray-bar) 2%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mx-6 my-5">
+      <div id="cv" class="grid grid-rows-2 grid-cols-3">
+        <div id="me" class="col-span-3">
+          <div class="flex items-center px-3">
+            <img
+              class="w-20 h-20 object-cover rounded-xl"
+              src="./foto_per_accounts2.jpg"
+            />
+            <div class="px-4">
+              <strong class="text-2xl">Matteo Scala</strong>
+              <br />
+              <span>Software Engineer</span>
+            </div>
+          </div>
+        </div>
+        <div id="history" class="col-span-2 py-4 px-1">
+          <p>
+            <span class="material-icons">work</span>
+            <strong class="text-xl">Esperienze lavorative</strong>
+          </p>
+          <div class="pl-8 py-1">
+            <p class="text-sm text-slate-400">
+              <span class="font-semibold">VM Sistemi-Smeup /</span> Apr 2023 —
+              presente
+            </p>
+            <p class="text-base">
+              Lavorato in <b>Java EE</b> alla scrittura di integrazioni per clienti, attraverso client o server che effettiavano o rispondevano a richieste HTTP REST ed interaginvano con programmi COBOL. 
+              Qui ho avuto modo di scrivere documentazione degli sviluppi sempre più chiara per tutto il team.
+            </p>
+          </div>
+          <div class="pl-8 py-1">
+            <p class="text-sm text-slate-400">
+              <span class="font-semibold">GFT Italia /</span> Apr 2022 —
+              Apr 2023
+            </p>
+            <p class="text-base">
+              Approfondito la mia conoscenza di Java e altri linguaggi (JSP e HQL), facendo esperienza con architetture complesse, software proprietario e tecnologie legacy (consulenza in ambito bancario).
+              Imparato a coordinare il lavoro con SVN, navigare log compleassi, lavorare con issue-tracker come <b>Jira</b>.
+            </p>
+          </div>
+          <div class="pl-8 py-1">
+            <p class="text-sm text-slate-400">
+              <span class="font-semibold">Halnet Srl /</span> Nov 2017 — Apr
+              2022
+            </p>
+            <p class="text-base">
+              Sviluppato servizi di monitoraggio per operazioni critiche di alcuni clienti, personalizzato interfacce web di gestionali con Vaadin e sviluppo strumenti interni all’azienda.
+              Tutto in Java, maturando esperienza nella gestione di repository di <b>Maven</b> e nell’utilizzo di <b>JPA</b>.
+            </p>
+          </div>
+          <div class="py-4"><p>
+            <span class="material-icons">school</span>
+            <strong class="text-2xl">Istruzione e Formazione</strong>
+          </p>
+          <div class="pl-8 py-1">
+            <p class="text-sm text-slate-400">
+              <span class="font-semibold">UniBo /</span> Nov 2017 — Lug 2021
+            </p>
+            <p class="text-base">
+              Corso di
+              <a 
+                href="https://corsi.unibo.it/laurea/IngegneriaScienzeInformatiche"
+                >Ingegneria e Scienze Informatiche</a
+              >. La
+              <a href="https://github.com/byschii/la_mia_tesi"
+                >tesi di laurea</a
+              >
+              consisteva in un elaborato di
+              <i>Data Intensive Application</i> nel quale ho scritto un sistema
+              di classificazione di stenosi coronariche, tramite la combinazione
+              di metodi di <b>apprendimento automatico</b>, sviluppati attraverso <b>Colab</b>.
+            </p>
+          </div>
+        </div>
+          <p>
+            <span class="material-icons">science</span>
+            <strong class="text-xl">Progetti Personali</strong>
+          </p>
+          <div class="pl-12 py-1">
+            <ul class="list-disc">
+              <li class="text-base">
+                <a
+                  class="text-semibold"
+                  href="https://github.com/byschii/ecg-segmentation/blob/main/unet_for_ecg.ipynb"
+                >
+                Deep Learning for ECG Segmentation</a
+                >: <b>implementazione open-source di un paper</b> dove veniva effettuato il riconoscimento automatico di differenti tipi di onde in elettrocardiogrammi.
+                Il codice del paper non era stato rilasciato quindi l'ho riscritto io.
+              </li>
+              <li 
+                class="text-base" style="display: none">
+                <a 
+                  class="text-semibold"
+                  href="https://pycrisi.click/">Crisi Detector</a>: un sito per
+                l’analisi dello stato delle finanze di un azienda. Backend
+                scritto in <b>Django</b> integrato con Stripe.
+              </li>
+              <li class="text-base">
+              <a 
+                class="text-semibold"
+                href="https://palladineve.com">Palladineve</a>: Un sito che permette ottimizzare insieme di ETF dato un livello di rischio.
+                È diviso in 3 parti: il frontend in <b>Typescript</b> (con il framework Solid.js), il banckend scritto in <b>Golang</b> e l'ottimizzatore in <b>Python</b>. Tutto deployato con Docker. 
+              </li>
+              <li class="text-base">
+                <a 
+                  class="text-semibold"
+                  href="https://github.com/byschii/titolary">Titolary</a>: app
+                Android che aiutava a scegliere la formazione al fantacalcio.
+                Era scritta con <b>Flutter</b>, il backend era scritto in
+                Typescript (sia le API per l’applicazione che il web scraping).
+                I dati memorizzati su <b>MongoDB</b>; tutto hostato in un <b>server linux</b> su
+                <b>AWS</b>, con analytics e ads tramite Firebase/AdMob.
+              </li>
+            </ul>
+          </div>
+        </div>
+        <div id="details" class="col-span-1 py-4 px-2">
+          <strong class="text-lg">
+            Info Personali
+          </strong>
+          <br />
+          <span class="text-base">
+            <span class="font-semibold text-slate-400">Data e Luogo di nascita</span>
+            <br />
+            20/11/1998, Faenza
+          </span>
+          <br />
+          <span class="text-base">
+            <span class=" font-semibold text-slate-400">Patente</span>
+            <br />
+            B
+          </span>
+          <br />
+          <span class="text-base">
+            <span class="font-semibold text-slate-400">Contatti</span>
+            <br />
+            331 321 7080
+            <br />
+            <a href="mailto:scala.matteo.98@gmail.com"
+              >scala.matteo.98@gmail.com</a
+            >
+          </span>
+          <br />
+          <span class="text-base">
+            <span class=" font-semibold text-slate-400">Link</span>
+            <br />
+            <a href="https://www.linkedin.com/in/matteo-scala-3115b617a/"
+              >LinkedIn</a
+            >
+            <br />
+            <a href="https://github.com/byschii">GitHub</a>
+          </span>
+          <br />
+
+          <span class="text-base">
+            <span class="font-semibold text-slate-400">Lingue Straniere</span>
+            <br />
+            <span>Inglese (B2)</span>
+          </span>
+          <br />
+          <span class="text-base">
+            <span class="font-semibold text-slate-400">Altro</span>
+            <br />
+            <span>Corsi sicurezza sul lavoro</span>
+          </span>
+          <br />
+          <strong class="text-lg">
+            Compenteze
+          </strong>
+          <br />
+          <span class="text-base">
+            <span class="font-semibold text-slate-400">Linguaggi</span>
+            <div> Python
+              <hr class="lvl6" />
+            </div>
+            <div>Golang
+              <hr class="lvl4" />
+            </div>
+            <div>Javascript / Typescript
+              <hr class="lvl4" />
+            </div>
+            <span class="font-semibold text-slate-400">Database</span>
+            <div> SQL / SQLite
+              <hr class="lvl4" />
+            </div>
+            <span class="font-semibold text-slate-400">Strumenti</span>
+            <div> Git / SVN / RTC
+              <hr class="lvl5" />
+            </div>
+            <div>NginX
+              <hr class="lvl4" />
+            </div>
+            <div>Docker
+              <hr class="lvl4" />
+            </div>
+            <div>Caddy
+              <hr class="lvl3" />
+            </div>
+          </div>
+          </span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
