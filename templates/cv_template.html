@@ -1,0 +1,263 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <meta http-equiv="refresh" content="55">
+
+    <title>CV</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link
+      href="https://fonts.googleapis.com/icon?family=Material+Icons"
+      rel="stylesheet"
+    />
+
+    <style>
+      :root {
+        --link-color: rgb(50, 220, 50);
+        --main-color: rgb(60, 240, 60);
+        --gray-bar: #eaeaea;
+      }
+      @page {
+        size: 21cm 29.7cm;
+      }
+      @media print {
+        html, body{
+            margin:0
+        }
+      }
+      html, body {
+        border: 1px solid black;
+        font-size: 0.87em;
+        height: 297mm;
+        width: 210mm;
+        word-wrap: break-word;
+        -print-color-adjust: exact;
+        -moz-print-color-adjust: exact;
+        -webkit-print-color-adjust: exact;
+      }
+      li, p {
+        border: 0px solid black;
+        line-height: 1.55em !important;
+      }
+      .material-icons {
+        font-family: "Material Icons";
+        font-weight: normal;
+        font-style: normal;
+        font-size: 24px;  
+        display: inline-block;
+        text-transform: none;
+        letter-spacing: normal;
+        word-wrap: normal;
+        white-space: nowrap;
+        direction: ltr;
+        vertical-align: -0.1em;
+
+        /* Support for all WebKit browsers. */
+        -webkit-font-smoothing: antialiased;
+        /* Support for Safari and Chrome. */
+        text-rendering: optimizeLegibility;
+        /* Support for Firefox. */
+        -moz-osx-font-smoothing: grayscale;
+        /* Support for IE. */
+        font-feature-settings: "liga";
+      }
+      #cv {
+        grid-template-rows: min-content;
+      }
+      a {
+        color: var(--link-color)  !important;
+      }
+      hr {
+        border-radius: 999px;
+        background: var(--main-color);
+        height: 0.4em !important;
+        width: 100%;
+      }
+      hr.lvl6 {
+        background: linear-gradient(to right, var(--main-color) 95%, var(--gray-bar) 96%);
+      }
+      hr.lvl5 {
+        background: linear-gradient(to right, var(--main-color) 71%, var(--gray-bar) 72%);
+      }
+      hr.lvl4 {
+        background: linear-gradient(to right, var(--main-color) 56%, var(--gray-bar) 57%);
+      }
+      hr.lvl3 {
+        background: linear-gradient(to right, var(--main-color) 34%, var(--gray-bar) 35%);
+      }
+      hr.lvl2 {
+        background: linear-gradient(to right, var(--main-color) 18%, var(--gray-bar) 19%);
+      }
+      hr.lvl1 {
+        background: linear-gradient(to right, var(--main-color) 9%, var(--gray-bar) 10%);
+      }
+      hr.lvl0 {
+        background: linear-gradient(to right, var(--main-color) 1%, var(--gray-bar) 2%);
+      }
+    </style>
+  </head>
+  <body>
+    <div class="mx-6 my-5">
+      <div id="cv" class="grid grid-rows-2 grid-cols-3">
+        <div id="me" class="col-span-3">
+          <div class="flex items-center px-3">
+            <img
+              class="w-20 h-20 object-cover rounded-xl"
+              src="./foto_per_accounts2.jpg"
+            />
+            <div class="px-4">
+              <strong class="text-2xl">Matteo Scala</strong>
+              <br />
+              <span class="text-base">{{ .Title }}</span>
+              <br />
+              <span class="text-xs">{{ .TextSuggest }}</span>
+            </div>
+          </div>
+        </div>
+        <div id="history" class="col-span-2 py-4 px-2">
+          <p>
+            <span class="material-icons">work</span>
+            <strong class="text-xl">Esperienze lavorative</strong>
+          </p>
+          {{ range .WE }}
+          <div class="pl-8 py-1">
+            <p class="text-sm text-slate-500">
+              <span class="font-semibold"> {{ .Company }} /</span> {{ .FromPeriod }} — {{ .ToPeriod }}
+            </p>
+            <p class="text-base">
+              {{ .Description }}
+            </p>
+          </div>
+          {{ end }}
+          <div class="py-4"><p>
+            <span class="material-icons">school</span>
+            <strong class="text-2xl">Istruzione e Formazione</strong>
+          </p>
+          <div class="pl-8 py-1">
+            <p class="text-sm text-slate-500">
+              <span class="font-semibold">UniBo /</span> Nov 2017 — Lug 2021
+            </p>
+            <p class="text-base">
+              Corso di
+              <a  href="{{ .ED.LinkCorso }}" > {{ .ED.Name }} </a >. La <a href="{{ .ED.LinkTesi }}" >tesi di laurea</a >
+              consisteva in un elaborato di
+              <i>Data Intensive Application</i> nel quale ho scritto un sistema
+              di classificazione di stenosi coronariche, tramite la combinazione
+              di metodi di <b>apprendimento automatico</b>, sviluppati attraverso <b>Colab</b>.
+            </p>
+          </div>
+        </div>
+          <p>
+            <span class="material-icons">science</span>
+            <strong class="text-xl">Progetti Personali</strong>
+          </p>
+          <div class="pl-12 py-1">
+            <ul class="list-disc">
+              {{ range .SP }}
+              <li class="text-base">
+                <a class="text-semibold" href="{{ .Link }}" > {{ .Name }}</a>: {{ .Description }}
+              </li>
+              {{ end }}
+            </ul>
+          </div>
+        </div>
+        <div id="details" class="col-span-1 py-4 px-5">
+          <strong class="text-lg">
+            Info Personali
+          </strong>
+          <br />
+          <span class="text-base">
+            <span class="font-semibold text-slate-400">Data e Luogo di nascita</span>
+            <br />
+            20/11/1998, Faenza
+          </span>
+          <br />
+          <span class="text-base">
+            <span class=" font-semibold text-slate-400">Patente</span>
+            <br />
+            B
+          </span>
+          <br />
+          <span class="text-base">
+            <span class="font-semibold text-slate-400">Contatti</span>
+            <br />
+            331 321 7080
+            <br />
+            <a href="mailto:scala.matteo.98@gmail.com"
+              >scala.matteo.98@gmail.com</a
+            >
+          </span>
+          <br />
+          <span class="text-base">
+            <span class=" font-semibold text-slate-400">Link</span>
+            <br />
+            <a href="https://www.linkedin.com/in/matteo-scala-3115b617a/"
+              >LinkedIn</a
+            >
+            <br />
+            <a href="https://github.com/byschii">GitHub</a>
+          </span>
+          <br />
+
+          <span class="text-base">
+            <span class="font-semibold text-slate-400">Lingue Straniere</span>
+            <br />
+            <span>Inglese (B2)</span>
+          </span>
+          <br />
+          <span class="text-base">
+            <span class="font-semibold text-slate-400">Altro</span>
+            <br />
+            <span>Corsi sicurezza sul lavoro</span>
+          </span>
+          <br />
+          <strong class="text-lg">
+            Compenteze
+          </strong>
+          <br />
+          <span class="text-base">
+            <span class="font-semibold text-slate-400">Linguaggi</span>
+            <div> Python
+              <hr class="lvl6" />
+            </div>
+            <div>Golang
+              <hr class="lvl5" />
+            </div>
+            <div>Javascript / Typescript
+              <hr class="lvl4" />
+            </div>
+            <div>Bash
+              <hr class="lvl3" />
+            </div>
+            <span class="font-semibold text-slate-400">Database</span>
+            <div> SQL / SQLite
+              <hr class="lvl4" />
+            </div>
+            <div> MongoDB
+              <hr class="lvl2" />
+            </div>
+            <div> Redis
+              <hr class="lvl2" />
+            </div>
+            <span class="font-semibold text-slate-400">Strumenti</span>
+            <div> Git / SVN / RTC
+              <hr class="lvl5" />
+            </div>
+            <div>NginX
+              <hr class="lvl4" />
+            </div>
+            <div>Docker
+              <hr class="lvl4" />
+            </div>
+            <div>Caddy
+              <hr class="lvl3" />
+            </div>
+          </div>
+          </span>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>
