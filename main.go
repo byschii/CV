@@ -7,11 +7,16 @@ import (
 	"fmt"
 	"log"
 	"os"
+	"os/exec"
 	"text/template"
 )
 
 func main() {
-	fmt.Print("Lancio compilaizone CV")
+	fmt.Println("Lancio compilaizone CV")
+
+	// 0 delete "oputput.html" and "output.pdf"
+	os.RemoveAll("output.html")
+	os.RemoveAll("output.pdf")
 
 	// 1 leggere il template
 	tmpl, err := template.ParseFiles("templates/cv_template_no_photo.html")
@@ -33,9 +38,18 @@ func main() {
 
 	// 3 compilare il template
 	destHtml := fsutils.CreateOrClearFile("output.html")
-	tmpl.Execute(destHtml, cv)
+	err = tmpl.Execute(destHtml, cv)
+	if err != nil {
+		log.Fatalf("err: %v", err)
+	}
 
 	// 4 salvare un html
-	fmt.Print("FINE CV")
+	fmt.Println("FINE CV")
+
+	// 5 launch browser with "python to_html.py"
+	err = exec.Command("python", "to_html.py").Run()
+	if err != nil {
+		log.Fatalf("err: %v", err)
+	}
 
 }
