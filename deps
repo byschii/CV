@@ -1,0 +1,3 @@
+pip install playwright
+sudo playwright install-deps
+sudo playwright chromium
